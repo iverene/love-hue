@@ -14,7 +14,7 @@ export default function Insights() {
   
   const answers = location.state?.answers || [];
 
-  const BASE_URL = "https://love-hue-backend.vercel.app/"; 
+  const BASE_URL = "https://love-hue-backend.vercel.app"; 
 
   useEffect(() => {
     if (!answers || answers.length === 0) {
