@@ -2,30 +2,37 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary */
-  --color-coralPink: "#F26C7F";
-  --color-goldenYellow: "#F6C758";
-  --color-mintGreen: "#6BC8A6";
-  --color-skyBlue: "#48A3E3";
-  --color-violet: "#7D5BD6";
+  /* --- Primary Colors --- */
+  --color-coralPink: #F26C7F;
+  --color-goldenYellow: #F6C758;
+  --color-mintGreen: #6BC8A6;
+  --color-skyBlue: #48A3E3;
+  --color-violet: #7D5BD6;
 
-  /* Neutral */
-  --color-softWhite: "#F9FAFB";
-  --color-cloudGray: "#E9EDF1";
-  --color-charcoal: "#2A2A2E";
-  --color-mutedBlueGray: "#5E6E78";
+  /* --- Neutral Colors --- */
+  --color-softWhite: #F9FAFB;
+  --color-cloudGray: #E9EDF1;
+  --color-charcoal: #2A2A2E;
+  --color-mutedBlueGray: #5E6E78;
 
-  /* Accent */
-  --color-peachAccent: "#FF8B70";
-  --color-tealAccent: "#3BAEA0";
-  --color-lavenderAccent: "#B497FF";
-  /* Fonts */
+  /* --- Accent Colors --- */
+  --color-peachAccent: #FF8B70;
+  --color-tealAccent: #3BAEA0;
+  --color-lavenderAccent: #B497FF;
+
+  /* --- Fonts --- */
   --font-heading: "Cormorant Garamond", serif;
   --font-body: "Manrope", sans-serif;
+  
+  /* --- Custom Gradients--- */
+  --image-spectrum-mesh: radial-gradient(circle at 50% 50%, rgba(242, 108, 127, 0.15) 0%, rgba(125, 91, 214, 0.15) 50%, rgba(72, 163, 227, 0.15) 100%);
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply m-0 p-0 text-deepBlack font-body;
+    @apply font-body text-charcoal bg-softWhite;
   }
 }

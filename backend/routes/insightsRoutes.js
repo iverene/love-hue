@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
     try {
         const { answers } = req.body;
         if (!answers) {
-            return res.status(400).json({ error: "answers are required" });
+            return res.status(400).json({ error: "Invalid answers format" });
         }
 
         const insights = await generateInsights(answers);

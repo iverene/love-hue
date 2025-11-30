@@ -6,7 +6,7 @@ async function generateInsights(answers) {
 
     const prompt = `
 You are a professional relationship and emotional psychology expert. Analyze the quiz answers and generate an in-depth love expression profile. Do NOT limit insights to the traditional five love languages (Words of Affirmation, Quality Time, Acts of Service, Gift Giving, Physical Touch). You must go beyond by also identifying hidden patterns, attachment tendencies, emotional needs, boundaries, communication style, and unique expressions of affection.
-
+**CRITICAL INSTRUCTION: Address the user directly using "You" and "Your". Do NOT use "He/She/They" or "The user".**
 USER ANSWERS:
 ${JSON.stringify(answers, null, 2)}
 
@@ -28,6 +28,7 @@ CRITICAL: You MUST respond with ONLY a JSON object in this EXACT structure. All 
 }
 
 IMPORTANT RULES:
+- Address the user as "You" in every field.
 - Do NOT reference any questionnaires or quiz format in the output.
 - Do NOT list love languages as a numbered list.
 - Do NOT use JSON or list formatting inside the values.
@@ -36,7 +37,7 @@ IMPORTANT RULES:
 
 
     const response = await axios.post('https://openrouter.ai/api/v1/chat/completions',
-        {model: "openai/gpt-oss-20b:free",
+        {model: "x-ai/grok-4.1-fast:free",
             messages: [{role: "user", content: prompt}],
             temperature: 0.3
         },
