@@ -177,6 +177,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 -----
 
-\<p align="center"\>
 Developed with ❤️ by Iverene Grace M. Causapin
-\</p\>
+
