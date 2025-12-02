@@ -116,7 +116,6 @@ export default function Insights() {
         {result && (
           <div className="max-w-5xl mx-auto space-y-12 animate-fade-in-up">
             {/* 1. HERO SUMMARY */}
-            {/* 1. HERO SUMMARY */}
             <div className="text-center space-y-6 max-w-3xl mx-auto">
               {/* The Generated Color Circle */}
               <div className="flex flex-col items-center justify-center gap-4">
