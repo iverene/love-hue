@@ -29,201 +29,201 @@ export default function Questionnaire() {
     {
       question: "Which kind of surprise makes you happiest?",
       options: [
-        "A heartfelt note or letter",
-        "A spontaneous hangout or trip",
-        "Someone completing a chore for me",
-        "A meaningful gift",
-        "A warm hug or touch"
+        "A heartfelt letter expressing deep feelings",
+        "A spontaneous adventure to somewhere new",
+        "Coming home to a completely clean house",
+        "A gift that shows they really know my taste",
+        "A long, uninterrupted embrace when I walk in"
       ]
     },
     {
-      question: "What matters most when resolving conflict?",
+      question: "When you feel misunderstood, what do you need most?",
       options: [
-        "Words of reassurance",
-        "Time spent discussing together",
-        "Practical solutions or compromises",
-        "Small gestures of apology",
-        "Physical comfort like hugs"
+        "Space to process my thoughts alone first",
+        "Immediate reassurance that we are okay",
+        "A logical breakdown of where the miscommunication happened",
+        "Physical comfort to ground me",
+        "Someone to just listen without trying to fix it"
       ]
     },
     {
-      question: "What kind of memories do you treasure most?",
+      question: "What makes you feel most intellectually connected to someone?",
       options: [
-        "Words shared in letters or messages",
-        "Moments spent together in adventures",
-        "Times someone supported me in tasks",
-        "Receiving thoughtful keepsakes",
-        "Moments of physical closeness"
+        "Debating complex topics or theories",
+        "Sharing books, articles, or music we love",
+        "Working together to solve a difficult problem",
+        "Dreaming about the future and setting goals",
+        "Sitting in comfortable silence while reading separately"
       ]
     },
     {
       question: "Which behavior feels most romantic to you?",
       options: [
-        "Poetic or loving words",
-        "Dedicated quality time",
-        "Helping me without asking",
-        "Gifts that show thought",
-        "Gentle physical touch"
+        "Being told exactly why I am special to them",
+        "Them dropping everything to be with me",
+        "Anticipating my needs before I ask",
+        "Bringing me a small token from their day",
+        "Holding hands while walking, even after years together"
       ]
     },
     {
-      question: "How do you show appreciation to someone?",
+      question: "How do you view personal space in a relationship?",
       options: [
-        "Verbal compliments",
-        "Spending time together",
-        "Acts of service",
-        "Giving thoughtful gifts",
-        "Physical affection"
+        "I need a lot of alone time to recharge",
+        "I prefer doing everything together",
+        "I like being in the same room but doing different things",
+        "I need physical touch but mental independence",
+        "It depends entirely on my mood that day"
       ]
     },
     {
       question: "Which is the best way to celebrate your successes?",
       options: [
-        "Receiving praise and recognition",
-        "Sharing the moment with someone",
-        "Having someone organize a celebration",
-        "Gifts or tokens to commemorate",
-        "Warm hugs or closeness"
+        "Public recognition or a toast among friends",
+        "A quiet, intimate dinner just the two of us",
+        "Someone taking a load off my plate so I can relax",
+        "A tangible reward or memento to mark the occasion",
+        "Physical intimacy and closeness"
       ]
     },
     {
-      question: "What makes a relationship feel secure to you?",
+      question: "What is your biggest trigger during an argument?",
       options: [
-        "Open and honest communication",
-        "Regular quality time together",
-        "Reliability and helping each other",
-        "Exchanging thoughtful gifts",
-        "Consistent physical affection"
+        "Feeling dismissed or unheard",
+        "Raised voices or aggressive tone",
+        "The other person walking away/shutting down",
+        "Emotional manipulation or guilt-tripping",
+        "Focusing on logic instead of feelings"
       ]
     },
     {
       question: "How do you feel about handwritten notes or letters?",
       options: [
-        "They mean everything",
-        "Nice, but not essential",
-        "Prefer actions over words",
-        "Appreciate if accompanied by a gift",
-        "Physical gestures are better"
+        "They are the ultimate treasure; I keep them all",
+        "They are sweet, but I prefer face-to-face words",
+        "I appreciate the effort, but actions matter more",
+        "I love them if they accompany a thoughtful gesture",
+        "They are nice, but physical presence feels more real"
       ]
     },
     {
-      question: "Which type of weekend do you prefer?",
+      question: "What role does humor play in your connection?",
       options: [
-        "Sharing meaningful conversations",
-        "Doing activities together",
-        "Helping each other with projects",
-        "Receiving or giving thoughtful gifts",
-        "Relaxing with hugs or cuddles"
+        "It's essential; banter is my love language",
+        "I love inside jokes that only we understand",
+        "It helps diffuse tension during stress",
+        "It's nice, but deep seriousness matters more",
+        "I show affection through playful teasing"
       ]
     },
     {
       question: "How do you prefer to apologize or be apologized to?",
       options: [
-        "Heartfelt words",
-        "Spending time to talk it through",
-        "Actions that fix the issue",
-        "A small gift or gesture",
-        "Physical reassurance or touch"
+        "A detailed verbal explanation and 'I'm sorry'",
+        "Spending quality time to reconnect",
+        "Changing behavior immediately (Action > Words)",
+        "A peace offering or small gift",
+        "A hug that signifies the fight is over"
       ]
     },
     {
       question: "What makes you feel proud in a relationship?",
       options: [
-        "Compliments or praise from them",
-        "Shared experiences and adventures",
-        "Mutual help and teamwork",
-        "Receiving thoughtful gifts",
-        "Physical closeness and intimacy"
+        "How we speak about each other to others",
+        " The memories and travel we've experienced",
+        "How efficiently we handle life's challenges",
+        "The thoughtful life we've built together",
+        "The intense chemistry we maintain"
       ]
     },
     {
-      question: "Which surprises make you feel most valued?",
+      question: "When you are stressed, what helps you the most?",
       options: [
-        "Words of affirmation",
-        "A spontaneous day together",
-        "Help with a difficult task",
-        "A personalized gift",
-        "A meaningful hug"
+        "Words of encouragement and validation",
+        "Someone dragging me out to have fun",
+        "Someone taking over my to-do list",
+        "A surprise treat or comfort food",
+        "Being held without needing to talk"
       ]
     },
     {
       question: "What do you consider a thoughtful gesture?",
       options: [
-        "Writing or saying kind words",
-        "Spending uninterrupted time",
-        "Doing chores or errands for someone",
-        "Giving a small meaningful item",
-        "Offering comforting touch"
+        "Sending a text just to say 'thinking of you'",
+        "Putting away their phone to focus on me",
+        "Filling up my gas tank or doing a chore",
+        "Remembering a small detail I mentioned weeks ago",
+        "Brushing hair out of my face"
       ]
     },
     {
-      question: "What’s the most important in a friendship?",
+      question: "How do you define loyalty?",
       options: [
-        "Encouraging words",
-        "Shared experiences",
-        "Supportive actions",
-        "Thoughtful presents",
-        "Physical comfort like hugs"
+        "Defending me when I'm not in the room",
+        "Prioritizing our relationship over others",
+        "Showing up consistently, day after day",
+        "Keeping my secrets and vulnerabilities safe",
+        "Physical faithfulness and devotion"
       ]
     },
     {
       question: "How do you prefer to be comforted after a bad day?",
       options: [
-        "Listening and speaking kindly",
-        "Spending time together",
-        "Helping solve problems",
-        "Receiving a small thoughtful item",
-        "Physical touch or embrace"
+        "Listening and letting me vent",
+        "Distracting me with an activity or movie",
+        "Helping me solve the problem logically",
+        "Buying me my favorite snack or drink",
+        "Cuddling on the couch in silence"
       ]
     },
     {
-      question: "Which is the most meaningful way to celebrate anniversaries?",
+      question: "What energy do you bring to a relationship?",
       options: [
-        "Writing letters or notes",
-        "Spending the day together",
-        "Acts of service or planning",
-        "Giving memorable gifts",
-        "Physical closeness"
+        "The Cheerleader (Encouraging & Vocal)",
+        "The Anchor (Steady & Present)",
+        "The Fixer (Helpful & Practical)",
+        "The Curator (Thoughtful & Detail-oriented)",
+        "The Lover (Affectionate & Warm)"
       ]
     },
     {
       question: "Which way of showing care do you notice first?",
       options: [
-        "Compliments or verbal praise",
-        "Quality time spent together",
-        "Help or support in tasks",
-        "Gifts and surprises",
-        "Physical affection"
+        "Someone complimenting my ideas or appearance",
+        "Someone clearing their schedule for me",
+        "Someone noticing I'm overwhelmed and helping",
+        "Someone bringing me a souvenir from a trip",
+        "Someone reaching out to touch my arm"
       ]
     },
     {
       question: "What kind of date feels ideal to you?",
       options: [
-        "Talking about dreams and feelings",
-        "Doing an activity together",
-        "One partner helping the other",
-        "Giving each other small thoughtful gifts",
-        "Cuddling, holding hands, or kissing"
+        "Deep conversation at a quiet coffee shop",
+        "An activity like hiking, gaming, or a workshop",
+        "Cooking a complex meal together at home",
+        "Exploring a museum or art gallery",
+        "A movie night with lots of cuddling"
       ]
     },
     {
-      question: "Which action makes you feel most loved?",
+      question: "Which fears resonates with you most?",
       options: [
-        "Hearing encouraging words",
-        "Someone prioritizing time with me",
-        "Receiving help or assistance",
-        "Getting a personalized gift",
-        "Feeling physical closeness"
+        "Being criticized or feeling inadequate",
+        "Being ignored or feeling invisible",
+        "Being seen as a burden or useless",
+        "Being forgotten or not valued",
+        "Being physically rejected or untouched"
       ]
     },
     {
       question: "What’s the best way someone can show support for you?",
       options: [
-        "Words of reassurance",
-        "Being present when needed",
-        "Helping me achieve a goal",
-        "Gifting something meaningful",
-        "A comforting hug or touch"
+        "Telling me 'I believe in you'",
+        "Sitting with me while I work",
+        "Helping me brainstorm or plan",
+        "Surprising me with resources I need",
+        "A reassuring squeeze of the hand"
       ]
     }
   ];

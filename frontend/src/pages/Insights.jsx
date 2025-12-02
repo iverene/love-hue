@@ -94,18 +94,44 @@ export default function Insights() {
           <div className="max-w-5xl mx-auto space-y-12 animate-fade-in-up">
             
             {/* 1. HERO SUMMARY */}
-            <div className="text-center space-y-6 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-linear-to-r from-coralPink/10 to-violet/10 border border-coralPink/20 text-coralPink text-sm font-bold tracking-wider uppercase">
-                <Sparkles className="w-4 h-4" />
-                Your Love Profile
-              </div>
-              <h1 className="font-heading text-5xl md:text-6xl text-charcoal font-bold leading-tight">
-                The Art of Your Affection
-              </h1>
-              <p className="font-heading text-2xl text-mutedBlueGray italic leading-relaxed">
-                "{result.loveProfile}"
-              </p>
-            </div>
+            {/* 1. HERO SUMMARY */}
+<div className="text-center space-y-6 max-w-3xl mx-auto">
+  
+  {/* The Generated Color Circle */}
+  <div className="flex flex-col items-center justify-center gap-4">
+    <div 
+      className="w-24 h-24 rounded-full shadow-2xl border-4 border-white animate-fade-in-up"
+      style={{ 
+        backgroundColor: result.personalColor?.hex || "#F26C7F", 
+        boxShadow: `0 10px 40px -10px ${result.personalColor?.hex || "#F26C7F"}` 
+      }}
+    ></div>
+    
+    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-softWhite border border-cloudGray text-charcoal text-sm font-bold tracking-wider uppercase">
+      <Sparkles className="w-4 h-4" style={{ color: result.personalColor?.hex }} />
+      Your Hue: {result.personalColor?.name || "Unknown"}
+    </div>
+  </div>
+
+  <h1 className="font-heading text-5xl md:text-6xl text-charcoal font-bold leading-tight">
+    The Art of Your Affection
+  </h1>
+  
+  <p className="font-heading text-2xl text-mutedBlueGray italic leading-relaxed">
+    "{result.loveProfile}"
+  </p>
+
+  {/* Color Meaning Section */}
+  <div className="bg-white/60 border border-cloudGray p-6 rounded-2xl max-w-2xl mx-auto mt-6">
+    <h3 className="font-heading text-xl font-bold mb-2" style={{ color: result.personalColor?.hex }}>
+      Why {result.personalColor?.name}?
+    </h3>
+    <p className="font-body text-charcoal/80 text-sm leading-relaxed">
+      {result.personalColor?.meaning}
+    </p>
+  </div>
+
+</div>
 
             {/* 2. PRIMARY & SECONDARY CARDS */}
             <div className="grid md:grid-cols-2 gap-6">

@@ -4,27 +4,42 @@ async function generateInsights(answers) {
     const key = process.env.OPENAI_API_KEY;
     if (!key) throw new Error('OPENAI API key not configured');
 
-    const prompt = `
-You are a professional relationship and emotional psychology expert. Analyze the quiz answers and generate an in-depth love expression profile. Do NOT limit insights to the traditional five love languages (Words of Affirmation, Quality Time, Acts of Service, Gift Giving, Physical Touch). You must go beyond by also identifying hidden patterns, attachment tendencies, emotional needs, boundaries, communication style, and unique expressions of affection.
+const prompt = `
+You are a professional relationship and emotional psychology expert. Analyze the quiz answers and generate an in-depth love expression profile for the user.
+
 **CRITICAL INSTRUCTION: Address the user directly using "You" and "Your". Do NOT use "He/She/They" or "The user".**
+
+1. Analyze the user's answers to determine their specific "Love Hue".
+   - If they value warmth, words, and touch, lean towards warm colors (Reds, Oranges, Pinks).
+   - If they value service, logic, and peace, lean towards cool colors (Blues, Teals, Greens).
+   - If they value uniqueness, depth, and intuition, lean towards complex colors (Violets, Indigos, Magentas).
+   - You are NOT limited to the standard rainbow. You can generate specific shades like "Dusty Rose," "Midnight Sapphire," or "Golden Sage."
+
+2. Go beyond traditional love languages. Identify hidden patterns, attachment tendencies, emotional needs, boundaries, and communication styles.
+
 USER ANSWERS:
 ${JSON.stringify(answers, null, 2)}
 
-CRITICAL: You MUST respond with ONLY a JSON object in this EXACT structure. All values must be plain text, NOT nested JSON:
+CRITICAL: You MUST respond with ONLY a JSON object in this EXACT structure. All values must be plain text strings:
 
 {
-  "loveProfile": "Provide a poetic but practical summary of how this person gives and receives love, as plain text only",
-  "primaryLoveStyle": "Explain their dominant love expressions and emotional patterns, beyond the 5 love languages, as plain text only",
-  "secondaryLoveStyle": "Explain their secondary tendencies, hidden needs, and affection triggers, as plain text only",
-  "strengths": "Describe the strengths and beautiful traits in the way they love, as plain text only",
-  "challenges": "Describe weaknesses, blind spots, or potential relationship risks, as plain text only",
-  "communicationStyle": "Describe how they express and interpret words, silence, conflict, and affection, as plain text only",
-  "idealPartnerMatch": "Describe the type of person, personality, or energy that matches well with their love style, as plain text only",
-  "growthAdvice": {
-    "forSelf": "Personal growth or healing advice, as plain text only",
-    "forRelationships": "Advice for thriving in love with others, as plain text only"
+  "loveProfile": "Provide a poetic but practical summary of how YOU give and receive love.",
+  "primaryLoveStyle": "Explain YOUR dominant love expressions and emotional patterns.",
+  "secondaryLoveStyle": "Explain YOUR secondary tendencies, hidden needs, and affection triggers.",
+  "personalColor": {
+      "hex": "A valid 6-character HEX code (e.g., #FF5733) representing their energy",
+      "name": "A creative name for this color (e.g., 'Velvet Crimson' or 'Morning Mist')",
+      "meaning": "Explain WHY this specific color represents their emotional style. Connect color psychology to their quiz results."
   },
-  "aiInsight": "A metaphorical emotional analysis that captures the deeper meaning of their love patterns, as plain text only"
+  "strengths": "Describe the strengths and beautiful traits in the way YOU love.",
+  "challenges": "Describe YOUR weaknesses, blind spots, or potential relationship risks.",
+  "communicationStyle": "Describe how YOU express and interpret words, silence, conflict, and affection.",
+  "idealPartnerMatch": "Describe the type of person, personality, or energy that matches well with YOUR love style.",
+  "growthAdvice": {
+    "forSelf": "Personal growth or healing advice for YOU.",
+    "forRelationships": "Advice for YOU on how to thrive in love with others."
+  },
+  "aiInsight": "A metaphorical emotional analysis that captures the deeper meaning of YOUR love patterns."
 }
 
 IMPORTANT RULES:
