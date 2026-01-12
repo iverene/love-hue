@@ -288,7 +288,7 @@ export default function Insights() {
 
             {/* CLOSING REMINDER */}
             <div className="max-w-3xl mx-auto mt-8">
-              <div className="bg-softWhite backdrop-blur-sm border border-white rounded-2xl p-8 text-center relative overflow-hidden">
+              <div className="bg-white/80 backdrop-blur-sm border border-white rounded-2xl p-8 text-center relative overflow-hidden">
                 {/* Subtle top gradient line */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-coralPink/30 via-violet/30 to-skyBlue/30"></div>
 
