@@ -52,9 +52,9 @@ IMPORTANT RULES:
 
 
     const response = await axios.post('https://openrouter.ai/api/v1/chat/completions',
-        {model: "x-ai/grok-4.1-fast:free",
+        {model: "google/gemini-2.0-flash-lite-preview-02-05:free",
             messages: [{role: "user", content: prompt}],
-            temperature: 0.3
+            temperature: 0.7
         },
         {  
             headers: {
