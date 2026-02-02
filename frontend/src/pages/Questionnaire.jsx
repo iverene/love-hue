@@ -25,208 +25,221 @@ export default function Questionnaire() {
     localStorage.setItem("loveHue_answers", JSON.stringify(answers));
   }, [index, answers]);
 
-  const questions = [
-    {
-      question: "Which kind of surprise makes you happiest?",
-      options: [
-        "A heartfelt letter expressing deep feelings",
-        "A spontaneous adventure to somewhere new",
-        "Coming home to a completely clean house",
-        "A gift that shows they really know my taste",
-        "A long, uninterrupted embrace when I walk in"
-      ]
-    },
-    {
-      question: "When you feel misunderstood, what do you need most?",
-      options: [
-        "Space to process my thoughts alone first",
-        "Immediate reassurance that we are okay",
-        "A logical breakdown of where the miscommunication happened",
-        "Physical comfort to ground me",
-        "Someone to just listen without trying to fix it"
-      ]
-    },
-    {
-      question: "What makes you feel most intellectually connected to someone?",
-      options: [
-        "Debating complex topics or theories",
-        "Sharing books, articles, or music we love",
-        "Working together to solve a difficult problem",
-        "Dreaming about the future and setting goals",
-        "Sitting in comfortable silence while reading separately"
-      ]
-    },
-    {
-      question: "Which behavior feels most romantic to you?",
-      options: [
-        "Being told exactly why I am special to them",
-        "Them dropping everything to be with me",
-        "Anticipating my needs before I ask",
-        "Bringing me a small token from their day",
-        "Holding hands while walking, even after years together"
-      ]
-    },
-    {
-      question: "How do you view personal space in a relationship?",
-      options: [
-        "I need a lot of alone time to recharge",
-        "I prefer doing everything together",
-        "I like being in the same room but doing different things",
-        "I need physical touch but mental independence",
-        "It depends entirely on my mood that day"
-      ]
-    },
-    {
-      question: "Which is the best way to celebrate your successes?",
-      options: [
-        "Public recognition or a toast among friends",
-        "A quiet, intimate dinner just the two of us",
-        "Someone taking a load off my plate so I can relax",
-        "A tangible reward or memento to mark the occasion",
-        "Physical intimacy and closeness"
-      ]
-    },
-    {
-      question: "What is your biggest trigger during an argument?",
-      options: [
-        "Feeling dismissed or unheard",
-        "Raised voices or aggressive tone",
-        "The other person walking away/shutting down",
-        "Emotional manipulation or guilt-tripping",
-        "Focusing on logic instead of feelings"
-      ]
-    },
-    {
-      question: "How do you feel about handwritten notes or letters?",
-      options: [
-        "They are the ultimate treasure; I keep them all",
-        "They are sweet, but I prefer face-to-face words",
-        "I appreciate the effort, but actions matter more",
-        "I love them if they accompany a thoughtful gesture",
-        "They are nice, but physical presence feels more real"
-      ]
-    },
-    {
-      question: "What role does humor play in your connection?",
-      options: [
-        "It's essential; banter is my love language",
-        "I love inside jokes that only we understand",
-        "It helps diffuse tension during stress",
-        "It's nice, but deep seriousness matters more",
-        "I show affection through playful teasing"
-      ]
-    },
-    {
-      question: "How do you prefer to apologize or be apologized to?",
-      options: [
-        "A detailed verbal explanation and 'I'm sorry'",
-        "Spending quality time to reconnect",
-        "Changing behavior immediately (Action > Words)",
-        "A peace offering or small gift",
-        "A hug that signifies the fight is over"
-      ]
-    },
-    {
-      question: "What makes you feel proud in a relationship?",
-      options: [
-        "How we speak about each other to others",
-        " The memories and travel we've experienced",
-        "How efficiently we handle life's challenges",
-        "The thoughtful life we've built together",
-        "The intense chemistry we maintain"
-      ]
-    },
-    {
-      question: "When you are stressed, what helps you the most?",
-      options: [
-        "Words of encouragement and validation",
-        "Someone dragging me out to have fun",
-        "Someone taking over my to-do list",
-        "A surprise treat or comfort food",
-        "Being held without needing to talk"
-      ]
-    },
-    {
-      question: "What do you consider a thoughtful gesture?",
-      options: [
-        "Sending a text just to say 'thinking of you'",
-        "Putting away their phone to focus on me",
-        "Filling up my gas tank or doing a chore",
-        "Remembering a small detail I mentioned weeks ago",
-        "Brushing hair out of my face"
-      ]
-    },
-    {
-      question: "How do you define loyalty?",
-      options: [
-        "Defending me when I'm not in the room",
-        "Prioritizing our relationship over others",
-        "Showing up consistently, day after day",
-        "Keeping my secrets and vulnerabilities safe",
-        "Physical faithfulness and devotion"
-      ]
-    },
-    {
-      question: "How do you prefer to be comforted after a bad day?",
-      options: [
-        "Listening and letting me vent",
-        "Distracting me with an activity or movie",
-        "Helping me solve the problem logically",
-        "Buying me my favorite snack or drink",
-        "Cuddling on the couch in silence"
-      ]
-    },
-    {
-      question: "What energy do you bring to a relationship?",
-      options: [
-        "The Cheerleader (Encouraging & Vocal)",
-        "The Anchor (Steady & Present)",
-        "The Fixer (Helpful & Practical)",
-        "The Curator (Thoughtful & Detail-oriented)",
-        "The Lover (Affectionate & Warm)"
-      ]
-    },
-    {
-      question: "Which way of showing care do you notice first?",
-      options: [
-        "Someone complimenting my ideas or appearance",
-        "Someone clearing their schedule for me",
-        "Someone noticing I'm overwhelmed and helping",
-        "Someone bringing me a souvenir from a trip",
-        "Someone reaching out to touch my arm"
-      ]
-    },
-    {
-      question: "What kind of date feels ideal to you?",
-      options: [
-        "Deep conversation at a quiet coffee shop",
-        "An activity like hiking, gaming, or a workshop",
-        "Cooking a complex meal together at home",
-        "Exploring a museum or art gallery",
-        "A movie night with lots of cuddling"
-      ]
-    },
-    {
-      question: "Which fears resonates with you most?",
-      options: [
-        "Being criticized or feeling inadequate",
-        "Being ignored or feeling invisible",
-        "Being seen as a burden or useless",
-        "Being forgotten or not valued",
-        "Being physically rejected or untouched"
-      ]
-    },
-    {
-      question: "What’s the best way someone can show support for you?",
-      options: [
-        "Telling me 'I believe in you'",
-        "Sitting with me while I work",
-        "Helping me brainstorm or plan",
-        "Surprising me with resources I need",
-        "A reassuring squeeze of the hand"
-      ]
-    }
-  ];
+const questions = [
+  // --- SECTION 1: THE SPARK (Expression & Connection) ---
+  {
+    question: "Love feels most real to you when it is...",
+    options: [
+      "Verbalized: Spoken clearly and frequently",
+      "Experienced: Shared through undivided attention",
+      "Demonstrated: Shown through helpful actions",
+      "Symbolized: Captured in thoughtful tokens",
+      "Felt: Transferred through physical closeness"
+    ]
+  },
+  {
+    question: "When you are completely enamored with someone, your instinct is to...",
+    options: [
+      "Write them long messages or tell them all their best qualities",
+      "Clear your schedule to be near them as much as possible",
+      "Look for ways to make their life easier or fix their problems",
+      "Surprise them with things you saw that reminded you of them",
+      "Find reasons to touch them, hold hands, or be physically close"
+    ]
+  },
+  {
+    question: "What creates the deepest sense of intimacy for you?",
+    options: [
+      "Late-night conversations where we bare our souls",
+      "Doing a hobby or activity together in 'flow state'",
+      "Building a life together (collaborating on goals/chores)",
+      "Creating a collection of memories and mementos",
+      "Skin-to-skin contact and non-sexual touch"
+    ]
+  },
+
+  // --- SECTION 2: ATTACHMENT & SECURITY (The Psychology) ---
+  {
+    question: "When a partner seems distant or quiet, where does your mind go?",
+    options: [
+      "I give them space; I assume they will come back when ready (Secure)",
+      "I panic and wonder if I did something to upset them (Anxious)",
+      "I feel relieved to finally have some time to myself (Avoidant)",
+      "I try to fix it immediately by asking 'What's wrong?' repeatedly (Anxious)",
+      "I withdraw as well to protect myself from rejection (Avoidant/Protective)"
+    ]
+  },
+  {
+    question: "How do you handle emotional vulnerability?",
+    options: [
+      "I crave it; I want to merge deeply and quickly",
+      "I am open, but I maintain a healthy sense of self",
+      "I struggle with it; I fear being seen as weak or needy",
+      "I share facts and thoughts, but I keep deep feelings guarded",
+      "I express vulnerability through physical presence, not words"
+    ]
+  },
+  {
+    question: "Which relationship dynamic feels safest to you?",
+    options: [
+      "Total transparency: We know everything about each other",
+      "Interdependence: We rely on each other but have separate lives",
+      "Autonomy: We are partners, but I need strong boundaries",
+      "Devotion: We prioritize each other above everyone else",
+      "Consistency: We have a predictable, steady routine"
+    ]
+  },
+
+  // --- SECTION 3: CONFLICT & REPAIR ---
+  {
+    question: "In the heat of an argument, what is your reflex?",
+    options: [
+      "I need to talk it out immediately; silence feels dangerous",
+      "I need to step away and process alone before I say something I regret",
+      "I try to de-escalate by focusing on logic and facts",
+      "I shut down/freeze and struggle to find my words",
+      "I reach out for physical contact to re-establish the bond"
+    ]
+  },
+  {
+    question: "How do you know an apology is sincere?",
+    options: [
+      "They articulate exactly what they did wrong and why it hurt",
+      "They sit with me and listen until I feel heard",
+      "They immediately change the behavior (Changed behavior > Words)",
+      "They bring a peace offering that shows they were thinking of me",
+      "They hug me and I can feel the tension leave their body"
+    ]
+  },
+
+  // --- SECTION 4: MENTAL LOAD & SUPPORT ---
+  {
+    question: "When you are overwhelmed with life, what do you crave?",
+    options: [
+      "Encouragement: 'You can do this, I believe in you'",
+      "Presence: Someone just sitting nearby while I work (Body Doubling)",
+      "Relief: Someone taking a task off my plate without asking",
+      "Treats: A comfort meal or small gift to cheer me up",
+      "Grounding: A long hug that resets my nervous system"
+    ]
+  },
+  {
+    question: "What makes you feel most 'seen' by a partner?",
+    options: [
+      "When they compliment a specific trait or idea I have",
+      "When they remember a story I told them months ago",
+      "When they notice I'm tired and handle the logistics",
+      "When they buy me something related to a niche interest",
+      "When they notice my body language changes before I speak"
+    ]
+  },
+
+  // --- SECTION 5: LIFESTYLE & VALUES ---
+  {
+    question: "How do you view personal independence?",
+    options: [
+      "It's scary; I prefer us to be a unit",
+      "It's vital; I need to maintain my own identity and secrets",
+      "It's healthy; I want us to be two wholes making a greater whole",
+      "It's practical; we should be able to function without each other",
+      "It's flexible; I want to be independent but emotionally tethered"
+    ]
+  },
+  {
+    question: "What is your 'Golden Rule' for a relationship?",
+    options: [
+      "Never go to bed angry (Communication)",
+      "Always make time for date night (Prioritization)",
+      "Actions speak louder than words (Reliability)",
+      "Always remember special occasions (Thoughtfulness)",
+      "Never withhold affection (Connection)"
+    ]
+  },
+  {
+    question: "Which weekend activity sounds like peak romance?",
+    options: [
+      "Coffee and deep conversation for hours",
+      "A road trip with no destination, just us",
+      "Building furniture or tackling a home project together",
+      "Going to a flea market to find hidden treasures",
+      "Staying in bed all morning, just cuddling"
+    ]
+  },
+
+  // --- SECTION 6: THE DEEP SUBCONSCIOUS ---
+  {
+    question: "What is your deepest relationship fear?",
+    options: [
+      "Being misunderstood or criticized constantly",
+      "Being ignored or feeling invisible in the same room",
+      "Being a burden or having needs that are 'too much'",
+      "Being forgotten or not valued enough",
+      "Being physically rejected or untouched"
+    ]
+  },
+  {
+    question: "If you could only have one for the rest of your life, what would it be?",
+    options: [
+      "To be admired and spoken of highly",
+      "To be understood without having to explain",
+      "To be supported in my ambitions and daily life",
+      "To be cherished and surprised",
+      "To be held and desired"
+    ]
+  },
+  
+  // --- SECTION 7: NUANCED SCENARIOS ---
+  {
+    question: "Your partner goes on a trip. What do you miss most?",
+    options: [
+      "The sound of their voice and our daily debriefs",
+      "Having a companion for activities and meals",
+      "The help they provide around the house",
+      "The little things they bring home for me",
+      "The warmth of their body next to mine"
+    ]
+  },
+  {
+    question: "How do you define 'Loyalty'?",
+    options: [
+      "Defending my name when I'm not in the room",
+      "Prioritizing our time together over others",
+      "Being reliable; doing what you say you will do",
+      "Keeping my secrets and holding my history",
+      "Physical faithfulness and exclusive intimacy"
+    ]
+  },
+  {
+    question: "What makes a house feel like a home?",
+    options: [
+      "The laughter and conversations that fill it",
+      "The people who spend time inside it",
+      "The order, cleanliness, and functionality of it",
+      "The art, decor, and items that tell a story",
+      "The comfort and coziness of the furniture"
+    ]
+  },
+  {
+    question: "When you achieve a major goal, you want your partner to...",
+    options: [
+      "Tell me how proud they are and brag about me",
+      "Take me out to celebrate and share the moment",
+      "Handle the mundane stuff so I can bask in the win",
+      "Give me a memento to mark the milestone",
+      "Embrace me enthusiastically"
+    ]
+  },
+  {
+    question: "Ideally, love should feel like...",
+    options: [
+      "A beautiful melody (Harmonious & Expressive)",
+      "A warm fireplace (Constant & Present)",
+      "A strong foundation (Solid & Reliable)",
+      "A treasure chest (Rich & Valuable)",
+      "A soft blanket (Comforting & Enveloping)"
+    ]
+  }
+];
 
   const handleAnswer = (selectedOption) => {
     const newAnswers = [...answers];
