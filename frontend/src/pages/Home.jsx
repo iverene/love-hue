@@ -11,7 +11,7 @@ export default function Home() {
     "/hero-bg-1.jpg",
     "/hero-bg-2.jpg",
     "/hero-bg-3.jpg",
-
+    "/hero-bg-4.jpeg",
   ];
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function Home() {
           <div className="pt-8">
             <a 
               href="/quiz"
-              className="inline-flex items-center justify-center px-10 py-4 font-body text-lg font-semibold text-charcoal bg-white rounded-full transition-all duration-300 hover:bg-coralPink hover:text-white hover:scale-105 hover:shadow-xl group"
+              className="inline-flex items-center justify-center px-8 py-4 font-body text-md font-semibold text-charcoal bg-white rounded-full transition-all duration-300 hover:bg-coralPink hover:text-white hover:scale-105 hover:shadow-xl group"
             >
               Find Your Hue
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
