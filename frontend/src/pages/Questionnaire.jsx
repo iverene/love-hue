@@ -27,14 +27,14 @@ export default function Questionnaire() {
 
 const questions = [
   // --- SECTION 1: THE SPARK (Expression & Connection) ---
-  {
-    question: "Love feels most real to you when it is...",
+{
+    question: "Which gesture translates to 'I love you' most clearly?",
     options: [
-      "Verbalized: Spoken clearly and frequently",
-      "Experienced: Shared through undivided attention",
-      "Demonstrated: Shown through helpful actions",
-      "Symbolized: Captured in thoughtful tokens",
-      "Felt: Transferred through physical closeness"
+      "Hearing the words spoken with genuine intent",
+      "Having someone's undivided, distraction-free presence",
+      "Seeing someone go out of their way to help me",
+      "Receiving a token that shows I was on their mind",
+      "Feeling the safety and warmth of physical contact"
     ]
   },
   {
