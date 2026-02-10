@@ -130,7 +130,7 @@ try {
         console.log("Starting AI generation...");
 
         const timeoutPromise = new Promise((_, reject) => 
-            setTimeout(() => reject(new Error("TIMEOUT")), 8500) // 8.5 seconds limit
+            setTimeout(() => reject(new Error("TIMEOUT")), 25000) 
         );
 
 
