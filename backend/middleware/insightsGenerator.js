@@ -67,7 +67,7 @@ function generateFallbackProfile(answers) {
 }
 
 async function generateInsights(answers) {
-    const key = process.env.OPENAI_API_KEY;
+    const key = process.env.GEMINI_API_KEY;
 
     if (!key) {
         console.warn("No API Key found. Using Fallback Logic.");
@@ -133,35 +133,46 @@ try {
             setTimeout(() => reject(new Error("TIMEOUT")), 25000) 
         );
 
-
-        const aiPromise = axios.post('https://openrouter.ai/api/v1/chat/completions',
-        {
-            model: "qwen/qwen3-max-thinking",
-            messages: [{role: "user", content: prompt}],
-
-        },
-        {  
-            headers: {
-                Authorization: `Bearer ${key}`,
-                "HTTP-Referer": "https://love-hue.vercel.app",
-                "X-Title": "Love Hue"
+        // Corrected Axios Call
+        const aiPromise = axios.post(
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`,
+            {
+                // DATA BODY
+                contents: [{
+                    parts: [{ text: prompt }]
+                }],
+                generationConfig: {
+                    temperature: 0.7,
+                    responseMimeType: "application/json" 
+                }
+            },
+            {   
+                // CONFIG OBJECT (Headers & Timeout go here together)
+                timeout: 25000,
+                headers: {
+                    "Content-Type": "application/json"
+                }
             }
-        }
-    );
+        );
 
-    const response = await Promise.race([aiPromise, timeoutPromise]);
+        // Race logic remains the same
+        const response = await Promise.race([aiPromise, timeoutPromise]);
 
-        const text = response.data.choices?.[0]?.message?.content || "";
+        const text = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!text) throw new Error("Empty response from AI");
+        
+        // Clean potential markdown just in case
         const cleanJson = text.replace(/```json/g, '').replace(/```/g, '').trim();
+
         return JSON.parse(cleanJson);
 
     } catch (error) {
         if (error.message === "TIMEOUT") {
-            console.warn("AI took too long. Switching to Fallback to save Vercel execution time.");
+            console.warn("AI Generation Timed Out. Using Fallback.");
         } else {
-            console.error("AI Error:", error.message);
+            console.error("AI Generation Failed:", error.message);
+            if (error.response) console.error("Details:", JSON.stringify(error.response.data));
         }
-        
         return generateFallbackProfile(answers);
     }
 } 
