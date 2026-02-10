@@ -47,10 +47,9 @@ export default function Insights() {
         localStorage.removeItem("loveHue_index");
         localStorage.removeItem("loveHue_answers");
       } catch (err) {
-        console.error("Error generating insights:", err);
-        setError(
-          "We couldn't generate your palette right now. Please try again."
-        );
+          console.error("Error generating insights:", err);
+          const errorMessage = err.response?.data?.error || "We couldn't generate your palette right now. Please try again.";
+          setError(errorMessage);
       } finally {
         setLoading(false);
       }
