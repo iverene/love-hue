@@ -68,7 +68,7 @@ function generateFallbackProfile(answers) {
 
 async function generateInsights(answers) {
     const key = process.env.OPENAI_API_KEY;
-    
+
     if (!key) {
         console.warn("No API Key found. Using Fallback Logic.");
         return generateFallbackProfile(answers);
@@ -126,29 +126,44 @@ ${JSON.stringify(answers, null, 2)}
 - **DEPTH OVER BREADTH:** Focus on 2-3 profound insights rather than 10 shallow ones.
 `;
 
+try {
+        console.log("Starting AI generation...");
 
-    const response = await axios.post('https://openrouter.ai/api/v1/chat/completions',
-        {model: "allenai/molmo-2-8b:free",
+        const timeoutPromise = new Promise((_, reject) => 
+            setTimeout(() => reject(new Error("TIMEOUT")), 8500) // 8.5 seconds limit
+        );
+
+
+        const aiPromise = axios.post('https://openrouter.ai/api/v1/chat/completions',
+        {
+            model: "allenai/molmo-2-8b:free",
             messages: [{role: "user", content: prompt}],
             temperature: 0.7
         },
         {  
             headers: {
                 Authorization: `Bearer ${key}`,
-                "HTTP-Referer": "http://localhost:5173",
+                "HTTP-Referer": "https://love-hue.vercel.app",
                 "X-Title": "Love Hue"
             }
         }
-    )
+    );
 
-    const text = response.data.choices?.[0]?.message?.content || ""
-      try {
-        const json = text.match(/{[\s\S]*}/)
-        if (!json) throw new Error('No JSON found in the response')
-            return JSON.parse(json[0])
-      } catch (error) {
-        throw new Error('Error parsing JSON response: ' + text)
-      }
+    const response = await Promise.race([aiPromise, timeoutPromise]);
+
+        const text = response.data.choices?.[0]?.message?.content || "";
+        const cleanJson = text.replace(/```json/g, '').replace(/```/g, '').trim();
+        return JSON.parse(cleanJson);
+
+    } catch (error) {
+        if (error.message === "TIMEOUT") {
+            console.warn("AI took too long. Switching to Fallback to save Vercel execution time.");
+        } else {
+            console.error("AI Error:", error.message);
+        }
+        
+        return generateFallbackProfile(answers);
+    }
 } 
 
 module.exports = { generateInsights } 
