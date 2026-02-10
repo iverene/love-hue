@@ -136,7 +136,7 @@ try {
 
         const aiPromise = axios.post('https://openrouter.ai/api/v1/chat/completions',
         {
-            model: "google/gemini-2.0-flash-lite-preview-02-05:free",
+            model: "qwen/qwen3-max-thinking",
             messages: [{role: "user", content: prompt}],
 
         },
