@@ -136,7 +136,7 @@ try {
 
         const aiPromise = axios.post('https://openrouter.ai/api/v1/chat/completions',
         {
-            model: "google/gemini-2.0-flash-lite-preview-02-05:free",
+            model: "deepseek/deepseek-r1-distill-llama-70b:free",
             messages: [{role: "user", content: prompt}],
             temperature: 0.7
         },
