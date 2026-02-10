@@ -1,9 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-const rateLimit = require('express-rate-limit'); 
+const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
 const app = express();
+
+app.set('trust proxy', 1); 
 
 app.use(express.json());
 
@@ -12,17 +14,17 @@ app.use(cors({
     credentials: true
 }));
 
-// Allow only 20 requests per 15 minutes per IP
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, 
     max: 20, 
-    message: { error: "Too many requests, please try again later." }
+    message: { error: "Too many requests, please try again later." },
+    standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
 
 app.use('/api/user/insights', limiter); 
 
 const PORT = process.env.PORT || 5000;
-
 const insightsRoutes = require('./routes/insightsRoutes');
 app.use('/api/user/insights', insightsRoutes);
 
